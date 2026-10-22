@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion des éléments</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="config.js" defer></script>
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Gestion des éléments</h1>
+    <p>Ajouter et consulter les éléments</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Ajouter un élément</h2>
+
+      <form id="itemForm">
+        <label for="name">Nom</label>
+        <input type="text" id="name" required
+               placeholder="Ex. Clavier">
+
+        <label for="description">Description</label>
+        <input type="text" id="description"
+               placeholder="Description de l'élément">
+
+        <label for="price">Prix</label>
+        <input type="number" id="price" min="0"
+               step="any" required placeholder="Ex. 150">
+
+        <button type="submit" id="submitBtn">
+          Ajouter
+        </button>
+      </form>
+
+      <p id="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <div class="list-header">
+        <h2>Liste des éléments</h2>
+        <button type="button" id="refreshBtn" class="secondary">
+          Actualiser
+        </button>
+      </div>
+
+      <p id="loading" class="loading" role="status" aria-live="polite" hidden>
+        Chargement des éléments...
+      </p>
+      <div id="itemsList" aria-live="polite"></div>
+    </section>
+  </main>
+</body>
+</html>
